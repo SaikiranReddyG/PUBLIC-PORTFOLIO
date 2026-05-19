@@ -1,20 +1,16 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# SAi.G's Cybersecurity Portfolio
 
-# Run and deploy your AI Studio app
+A professional portfolio showcasing network and cybersecurity engineering projects by Saikiran (SAi.G). This site demonstrates hands-on projects such as a self-hosted SOC (PULSE), a custom intrusion detection system (SENTINEL), SDN IoT detection, and an isolated attack/defense lab (NETLAB).
 
-This contains everything you need to run your app locally.
+## Description
 
-View your app in AI Studio: https://ai.studio/apps/3c1648ae-0f19-4730-8d77-869bd5afe944
-
-## Run Locally
-
-**Prerequisites:**  Node.js
+This repository is a React + Vite single-page portfolio built with Tailwind-style utilities. It highlights projects, skills, education, and contact details related to security engineering and threat detection.
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Projects (high level)
+
+- PULSE — Self-hosted Security Operations Platform: ingestion receiver, SQLite persistence, Redis streaming, and a live terminal dashboard.
+- SENTINEL — Custom intrusion detection system implemented at raw-socket level for protocol-layer analysis.
+- SDN IoT DETECTION — ML-driven SDN controller that isolates anomalous IoT devices via OpenFlow.
+- NETLAB — Lightweight attack-and-defense lab using Linux namespaces and packet tooling.
+
