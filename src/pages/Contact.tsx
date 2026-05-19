@@ -6,7 +6,7 @@ export default function Contact() {
     { name: "Email", value: "saikiranreddy19565@gmail.com", icon: <Mail size={24} />, link: "mailto:saikiranreddy19565@gmail.com" },
     { name: "LinkedIn", value: "linkedin.com/in/gangula-sai-kiran-reddy", icon: <Linkedin size={24} />, link: "https://www.linkedin.com/in/gangula-sai-kiran-reddy/" },
     { name: "GitHub", value: "github.com/SaikiranReddyG", icon: <Github size={24} />, link: "https://github.com/SaikiranReddyG" },
-    { name: "Phone", value: "+33 751147631", icon: <Phone size={24} />, link: "tel:+33751147631" },
+    { name: "Phone/whatsapp", value: "+33 751147631", icon: <Phone size={24} />, link: "tel:+33751147631" },
   ];
 
   const highlights = [

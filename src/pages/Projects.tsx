@@ -41,7 +41,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-4">
             <h2 className="font-display text-5xl uppercase flex items-center gap-4">
-              <span className="text-primary-container">01.</span> Projects
+              <span className="text-primary-container"></span> Projects
             </h2>
           </div>
           <div className="md:col-span-8 flex items-end">
