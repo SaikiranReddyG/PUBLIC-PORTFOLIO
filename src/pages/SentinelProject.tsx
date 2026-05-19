@@ -339,7 +339,7 @@ export default function SentinelProject() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div>
             <h3 className="font-display text-xl font-bold mb-2 text-[#4bd9de]">Saikiran Gangula</h3>
-            <p className="font-mono text-[10px] tracking-widest opacity-60">© 2024 SENTINEL SYSTEMS. ALL RIGHTS RESERVED.</p>
+            
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-4 font-mono text-[10px] uppercase tracking-widest text-[#bacbbc]">
              <a href="https://github.com/SaikiranReddyG/sentinel" target="_blank" rel="noopener noreferrer" className="hover:text-[#4bd9de] transition-colors">SENTINEL REPO</a>

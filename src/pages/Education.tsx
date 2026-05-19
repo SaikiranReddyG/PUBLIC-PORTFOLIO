@@ -15,12 +15,12 @@ export default function Education() {
     },
     {
       period: "2020 — 2023",
-      degree: "B.Tech Electronics and communciation Engineering",
+      degree: "B.Tech Electronics and communication Engineering",
       institution: "Gurunanak Institute of Technology",
       location: "Hyderabad, India",
       image: "/assets/gnit.png",
       description: "Comprehensive foundational engineering program with a strong emphasis on core electronics, embedded systems and software development lifecycles. Established the analytical groundwork required for advanced technical problem-solving.",
-      tags: ["ELECTRONICS", "Telecommuication", "Hardware engineering"],
+      tags: ["ELECTRONICS", "Telecommunication", "Hardware engineering"],
       active: false,
     },
   ];

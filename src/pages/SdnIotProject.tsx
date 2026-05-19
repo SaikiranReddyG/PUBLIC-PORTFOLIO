@@ -349,7 +349,7 @@ export default function SdnIotProject() {
                <p>Team Project: Kusumanjali Vegi, Shane Samuel Pradeep</p>
                <p>ISEP Paris · Digital Security & Networks</p>
             </div>
-            <p className="font-mono text-[10px] tracking-widest opacity-40">© 2024 SDN-IOT SYSTEMS. ALL RIGHTS RESERVED.</p>
+            
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-4 font-mono text-[10px] uppercase tracking-widest text-[#8a94ad]">
              <a href="https://github.com/kusumanjali15/SDN-Project" target="_blank" rel="noopener noreferrer" className="hover:text-[#a5b4fc] transition-colors">PROJECT REPO</a>

@@ -280,7 +280,7 @@ export default function PulseProject() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div>
             <h3 className="font-display text-xl font-bold mb-2">Saikiran Gangula</h3>
-            <p className="font-mono text-[10px] tracking-widest opacity-60">© 2024 PULSE SYSTEMS. ALL RIGHTS RESERVED.</p>
+            
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-4 font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">
              <a href="https://github.com/SaikiranReddyG/PULSE.git" target="_blank" rel="noopener noreferrer" className="hover:text-primary-custom transition-colors">PULSE REPO</a>
