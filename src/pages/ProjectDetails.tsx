@@ -5,6 +5,7 @@ import PulseProject from "./PulseProject";
 import SentinelProject from "./SentinelProject";
 import NetlabProject from "./NetlabProject";
 import SdnIotProject from "./SdnIotProject";
+import PortwatchProject from "./PortwatchProject";
 
 interface ProjectData {
   title: string;
@@ -134,6 +135,10 @@ export default function ProjectDetails() {
 
   if (id === "sdn-iot-detection") {
     return <SdnIotProject />;
+  }
+
+  if (id === "portwatch") {
+    return <PortwatchProject />;
   }
 
   const project = id ? projectData[id] : null;

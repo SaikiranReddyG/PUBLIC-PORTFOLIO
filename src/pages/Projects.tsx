@@ -27,6 +27,12 @@ const projects = [
     description: "A self-contained attack-and-defense laboratory built on Linux network namespaces — lightweight, isolated, and forensically precise. Scapy handles offensive traffic generation, nftables enforces dynamic firewall rules, and Suricata monitors every packet crossing the virtual interfaces. Built to simulate real threat scenarios and validate defensive controls under controlled, repeatable conditions.",
     tags: ["LINUX-NAMESPACES", "SCAPY", "NFTABLES", "SURICATA"],
   },
+  {
+    id: "portwatch",
+    title: "PORTWATCH",
+    description: "A real-time Linux port and socket visualiser built entirely from /proc. It parses raw kernel address/state codes and traces socket inodes back to process descriptors, generating live terminal blades with state snapshot diffing and direct Pulse platform event logging.",
+    tags: ["PYTHON", "/PROC/NET", "TEXTUAL-TUI", "REAL-TIME"],
+  },
 ];
 
 const secondaryProjects = [
