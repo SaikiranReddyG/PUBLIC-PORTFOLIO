@@ -119,6 +119,22 @@ export default function PulseProject() {
           </div>
         </section>
 
+        {/* Video Explanation Section */}
+        <section className="py-24 border-b border-outline-variant bg-surface-container-lowest/50">
+          <div className="max-w-7xl mx-auto px-6 md:px-16">
+            <span className="font-mono text-[10px] text-primary-custom tracking-[0.3em] uppercase mb-4 block text-center">VIDEO WALKTHROUGH</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-12">Project Video Walkthrough</h2>
+            <div className="max-w-4xl mx-auto border border-outline-variant bg-black p-2">
+              <video 
+                src="/assets/generate_a_video_explaining_my.mp4" 
+                controls 
+                className="w-full aspect-video object-contain"
+                poster="/assets/dashboardMAIN.png"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Under The Hood */}
         <section className="py-24 max-w-7xl mx-auto px-6 md:px-16">
           <span className="font-mono text-[10px] text-primary-custom tracking-[0.3em] uppercase mb-4 block text-center">UNDER THE HOOD</span>

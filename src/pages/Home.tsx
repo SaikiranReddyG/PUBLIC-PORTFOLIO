@@ -74,12 +74,17 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             className="md:col-span-5 mt-12 md:mt-0"
           >
-            <div className="aspect-[3/4] bg-surface-container border border-on-background-custom overflow-hidden group">
+            <div className="aspect-[3/4] overflow-hidden group relative">
               <img
-                src="/assets/profilepicHOMEcolour.jpeg"
+                src="/assets/1779058089464.jpeg"
                 alt="SAi.G Portrait"
-                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-110"
+                className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-110 mix-blend-luminosity group-hover:mix-blend-normal opacity-85 group-hover:opacity-100"
+                style={{
+                  maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 80%)",
+                  WebkitMaskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 80%)"
+                }}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-background-custom/70 via-transparent to-background-custom/30 pointer-events-none transition-opacity duration-700 group-hover:opacity-40"></div>
             </div>
           </motion.div>
         </div>

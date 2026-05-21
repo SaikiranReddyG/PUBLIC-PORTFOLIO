@@ -29,7 +29,7 @@ export default function Skills() {
     {
       id: "05",
       title: "Programming",
-      items: ["Python (primary)", "C (systems/networking)", "Bash", "Java", "JavaScript", "SQL"],
+      items: ["Python (primary)", "C (systems/networking)", "Bash", "JavaScript", "SQL"],
       cols: 6,
     },
     {

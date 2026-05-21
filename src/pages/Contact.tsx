@@ -10,9 +10,9 @@ export default function Contact() {
   ];
 
   const highlights = [
-    { title: "Technical Precision", description: "Treating system architecture and code execution with surgical exactness. Built to scale, designed to secure." },
-    { title: "Zero-Trust Mindset", description: "Security is not an afterthought; it is the foundation. Every component is analyzed for vulnerability before deployment." },
-    { title: "Architectural Clarity", description: "Transforming complex, high-stakes requirements into clean, maintainable, and highly performant solutions." },
+    { title: "Hardware-Rooted Security", description: "Applies low-level precision from an electronics background to digital security." },
+    { title: "Resource-Constrained Engineering", description: "Brings hardware-level efficiency to software architecture." },
+    { title: "End-to-End Systems Thinking", description: "Designs individual tools to work as a unified ecosystem. Connects a network IDS, system monitor, and attack lab into a modular SOC platform operating over a single event contract." },
   ];
 
   return (

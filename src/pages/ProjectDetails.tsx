@@ -246,19 +246,21 @@ export default function ProjectDetails() {
         </div>
       </div>
 
-      <div className="mt-24 border-2 border-on-background-custom p-2 bg-surface-container-highest">
-        <div className="w-full aspect-video bg-surface overflow-hidden relative group border border-on-background-custom">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-          />
+      {id !== "cti-pipeline" && id !== "web-attack-framework" && (
+        <div className="mt-24 border-2 border-on-background-custom p-2 bg-surface-container-highest">
+          <div className="w-full aspect-video bg-surface overflow-hidden relative group border border-on-background-custom">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+            />
+          </div>
+          <div className="mt-2 flex justify-between items-center px-2">
+            <span className="font-mono text-xs text-on-surface-variant uppercase">Fig. 1</span>
+            <span className="font-mono text-xs text-on-surface-variant uppercase">System Analysis</span>
+          </div>
         </div>
-        <div className="mt-2 flex justify-between items-center px-2">
-          <span className="font-mono text-xs text-on-surface-variant uppercase">Fig. 1</span>
-          <span className="font-mono text-xs text-on-surface-variant uppercase">System Analysis</span>
-        </div>
-      </div>
+      )}
     </motion.div>
   );
 }
