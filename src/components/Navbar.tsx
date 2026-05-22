@@ -46,7 +46,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://drive.google.com/file/d/1r74_so1lt0I_YzqdBVUYi7IvMWX31n43/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1yJ6pmbUEy-2pgmuI1rMKQPinJJyz9c-k/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary-custom text-on-primary font-mono text-xs px-4 py-2 hover:bg-surface-tint transition-all uppercase border border-outline-variant shadow-[3px_3px_0px_#00210f] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] font-bold"
@@ -84,7 +84,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://drive.google.com/file/d/1r74_so1lt0I_YzqdBVUYi7IvMWX31n43/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1yJ6pmbUEy-2pgmuI1rMKQPinJJyz9c-k/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-on-background-custom text-background-custom font-mono text-center py-3 hover:bg-primary-container transition-colors uppercase block"

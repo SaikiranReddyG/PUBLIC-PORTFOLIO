@@ -59,7 +59,7 @@ export default function Home() {
                 Contact
               </Link>
               <a
-                href="https://drive.google.com/file/d/1r74_so1lt0I_YzqdBVUYi7IvMWX31n43/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1yJ6pmbUEy-2pgmuI1rMKQPinJJyz9c-k/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-transparent text-on-background-custom font-mono text-sm px-8 py-3 hover:bg-primary-container hover:text-background-custom hover:border-transparent transition-colors uppercase border-2 border-on-background-custom"
