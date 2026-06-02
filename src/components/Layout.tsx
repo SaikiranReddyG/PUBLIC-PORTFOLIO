@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const routeIndexMap: Record<string, number> = {
   "/": 0,
@@ -32,6 +33,7 @@ export default function Layout() {
   const { pathname, hash } = useLocation();
   const [direction, setDirection] = useState(0);
   const prevPathRef = useRef(pathname);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const prevIndex = getRouteIndex(prevPathRef.current);
@@ -115,7 +117,7 @@ export default function Layout() {
         <Link
           to={prevPage.path}
           className="fixed left-2 md:left-4 top-1/2 -translate-y-1/2 z-40 group flex items-center opacity-30 hover:opacity-100 transition-opacity duration-300"
-          title={`Load Previous Page: ${prevPage.label}`}
+          title={t("layout.load_prev", { name: t(`nav.${prevPage.id}`).toUpperCase() })}
         >
           {/* Cyber Line Decorator */}
           <div className="absolute left-0 w-0.5 h-6 bg-on-background-custom/30 group-hover:bg-primary-custom transition-all duration-300" />
@@ -123,7 +125,7 @@ export default function Layout() {
           <div className="ml-2 flex items-center gap-1.5 border border-[#3c4a3f]/20 hover:border-primary-custom bg-[#0b0e14]/90 backdrop-blur-sm px-2.5 py-1.5 font-mono select-none rounded-sm">
             <ChevronLeft size={13} className="text-on-background-custom/60 group-hover:text-primary-custom group-hover:-translate-x-0.5 duration-300 transition-transform shrink-0" />
             <span className="font-bold text-[9px] tracking-wider text-on-background-custom/80 group-hover:text-primary-custom transition-colors">
-              {prevPage.label}
+              {t(`nav.${prevPage.id}`).toUpperCase()}
             </span>
           </div>
         </Link>
@@ -132,11 +134,11 @@ export default function Layout() {
         <Link
           to={nextPage.path}
           className="fixed right-2 md:right-4 top-1/2 -translate-y-1/2 z-40 group flex items-center justify-end opacity-30 hover:opacity-100 transition-opacity duration-300"
-          title={`Load Next Page: ${nextPage.label}`}
+          title={t("layout.load_next", { name: t(`nav.${nextPage.id}`).toUpperCase() })}
         >
           <div className="mr-2 flex items-center gap-1.5 border border-[#3c4a3f]/20 hover:border-secondary-custom bg-[#0b0e14]/90 backdrop-blur-sm px-2.5 py-1.5 font-mono select-none rounded-sm">
             <span className="font-bold text-[9px] tracking-wider text-on-background-custom/80 group-hover:text-secondary-custom transition-colors">
-              {nextPage.label}
+              {t(`nav.${nextPage.id}`).toUpperCase()}
             </span>
             <ChevronRight size={13} className="text-on-background-custom/60 group-hover:text-secondary-custom group-hover:translate-x-0.5 duration-300 transition-transform shrink-0" />
           </div>
@@ -153,14 +155,14 @@ export default function Layout() {
           className="flex items-center gap-2 border border-[#3c4a3f]/50 bg-[#0a0e17]/95 backdrop-blur-md px-4 py-2 text-[10px] font-mono font-bold uppercase text-on-background-custom/80 hover:text-primary-custom hover:border-primary-custom/70 transition-all rounded shadow-2xl active:scale-95"
         >
           <ChevronLeft size={13} className="text-primary-custom" />
-          <span>PREV</span>
+          <span>{t("layout.prev")}</span>
         </Link>
 
         <Link
           to={nextPage.path}
           className="flex items-center gap-2 border border-[#3c4a3f]/50 bg-[#0a0e17]/95 backdrop-blur-md px-4 py-2 text-[10px] font-mono font-bold uppercase text-on-background-custom/80 hover:text-secondary-custom hover:border-secondary-custom/70 transition-all rounded shadow-2xl active:scale-95"
         >
-          <span>NEXT</span>
+          <span>{t("layout.next")}</span>
           <ChevronRight size={13} className="text-secondary-custom" />
         </Link>
       </div>

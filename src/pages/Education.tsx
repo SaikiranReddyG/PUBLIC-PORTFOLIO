@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { MapPin, FileText, ExternalLink, Download, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 export default function Education() {
+  const { t } = useTranslation();
+
   const education = [
     {
       period: "2024 — PRESENT",
@@ -38,7 +41,7 @@ export default function Education() {
     <div className="max-w-7xl mx-auto px-6 md:px-16 pt-32 pb-24">
       <header className="mb-24 pt-16">
         <h1 className="font-display text-5xl md:text-7xl text-on-background-custom uppercase font-bold">
-          Academic<br />Foundation
+          {t("education.header_title")}
         </h1>
       </header>
 
@@ -57,7 +60,7 @@ export default function Education() {
                   {item.period}
                 </div>
                 <h3 className="font-display text-2xl text-on-background-custom leading-tight pr-4 font-bold">
-                  {item.degree}
+                  {index === 0 ? t("education.m2_degree") : t("education.btech_degree")}
                 </h3>
               </div>
               
@@ -82,7 +85,7 @@ export default function Education() {
                   <span>{item.location}</span>
                 </div>
                 <p className="font-sans text-xl text-on-surface-variant max-w-2xl mb-10">
-                  {item.description}
+                  {index === 0 ? t("education.m2_desc") : t("education.btech_desc")}
                 </p>
               </div>
 
@@ -109,14 +112,14 @@ export default function Education() {
                       className="flex items-center gap-2 border-2 border-primary-custom hover:bg-primary-custom hover:text-black transition-all px-4 py-2 text-xs font-bold uppercase rounded-sm cursor-pointer select-none"
                     >
                       <FileText size={14} />
-                      <span>Decypt Record</span>
+                      <span>{t("education.decrypt_btn")}</span>
                     </button>
 
                     <a
                       href={item.document}
                       download
                       className="border-2 border-on-background-custom hover:bg-on-background-custom hover:text-background-custom p-2 rounded-sm cursor-pointer"
-                      title="Download Certified Copy"
+                      title={t("education.download_copy")}
                     >
                       <Download size={14} />
                     </a>
@@ -155,7 +158,7 @@ export default function Education() {
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
                   </div>
                   <span className="text-primary-custom font-mono text-xs uppercase tracking-widest font-bold">
-                    [SECURE RECORD]: {activeDoc.docLabel}
+                    {t("education.secure_record")}: {activeDoc.docLabel}
                   </span>
                 </div>
                 
@@ -168,12 +171,12 @@ export default function Education() {
                     title="Open in new window"
                   >
                     <ExternalLink size={14} />
-                    <span className="hidden sm:inline">FULLSCREEN</span>
+                    <span className="hidden sm:inline">{t("education.fullscreen")}</span>
                   </a>
                   <button
                     onClick={() => setActiveDoc(null)}
                     className="text-on-background-custom hover:text-rose-400 p-1.5 transition-all focus:outline-none cursor-pointer"
-                    aria-label="Secure close session"
+                    aria-label={t("education.secure_close")}
                   >
                     <X size={16} />
                   </button>
@@ -201,8 +204,8 @@ export default function Education() {
 
               {/* Status footer line */}
               <div className="flex justify-between items-center px-4 py-2.5 bg-[#111622] border-t border-[#1c2435] font-mono text-[9px] uppercase text-[#9caab8]/40">
-                <span>DIGITAL ARCHIVE SYSTEMS SECURITY CLEARANCE</span>
-                <span className="text-emerald-400 font-bold">STATUS: RECOVERED & VERIFIED</span>
+                <span>{t("education.clearance")}</span>
+                <span className="text-emerald-400 font-bold">{t("education.status_verified")}</span>
               </div>
             </motion.div>
           </motion.div>

@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ExternalLink, Terminal, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import PulseProject from "./PulseProject";
 import SentinelProject from "./SentinelProject";
 import NetlabProject from "./NetlabProject";
@@ -120,6 +121,7 @@ def execute_scan_module(self, target_url: str, module_type: str):
 
 export default function ProjectDetails() {
   const { id } = useParams<{ id: string }>();
+  const { t } = useTranslation();
 
   if (id === "pulse") {
     return <PulseProject />;
@@ -146,8 +148,8 @@ export default function ProjectDetails() {
   if (!project) {
     return (
       <div className="py-40 px-16 text-center">
-        <h1 className="font-display text-4xl uppercase">Project Not Found</h1>
-        <Link to="/" className="text-primary-custom hover:underline mt-4 inline-block">Return Home</Link>
+        <h1 className="font-display text-4xl uppercase">{t("project_details.not_found")}</h1>
+        <Link to="/" className="text-primary-custom hover:underline mt-4 inline-block">{t("project_details.return_home")}</Link>
       </div>
     );
   }
@@ -167,14 +169,14 @@ export default function ProjectDetails() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="md:col-span-8 space-y-12 pr-0 md:pr-12 md:border-r-2 border-on-background-custom pb-12 md:pb-0">
           <section>
-            <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-4 tracking-widest">Overview</h2>
+            <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-4 tracking-widest">{t("project_details.overview")}</h2>
             <p className="font-sans text-xl text-on-background-custom leading-relaxed">
               {project.overview}
             </p>
           </section>
 
           <section>
-            <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-6 tracking-widest border-b border-on-background-custom pb-2 inline-block">Key Architecture</h2>
+            <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-6 tracking-widest border-b border-on-background-custom pb-2 inline-block">{t("project_details.key_architecture")}</h2>
             <ul className="space-y-10 mt-8">
               {project.architecture.map((item) => (
                 <li key={item.id} className="flex items-start gap-6">
@@ -190,7 +192,7 @@ export default function ProjectDetails() {
 
           {project.codeSnippet && (
             <section>
-              <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-4 tracking-widest">Implementation</h2>
+              <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-4 tracking-widest">{t("project_details.implementation")}</h2>
               <div className="bg-[#121212] p-6 border border-on-background-custom">
                 <pre className="font-mono text-on-primary-container overflow-x-auto">
                   <code>{project.codeSnippet}</code>
@@ -201,7 +203,7 @@ export default function ProjectDetails() {
 
           {project.gallery && (
             <section>
-              <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-6 tracking-widest">System Interface Gallery</h2>
+              <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-6 tracking-widest">{t("project_details.system_gallery")}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {project.gallery.map((img, index) => (
                   <motion.div
@@ -226,7 +228,7 @@ export default function ProjectDetails() {
 
         <div className="md:col-span-4 space-y-12">
           <section>
-            <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-4 tracking-widest">Deployment Stack</h2>
+            <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-4 tracking-widest">{t("project_details.deployment_stack")}</h2>
             <div className="flex flex-wrap gap-2">
               {project.stack.map((s) => (
                 <span key={s} className="bg-on-background-custom text-background-custom font-mono text-sm uppercase px-3 py-1">
@@ -237,14 +239,14 @@ export default function ProjectDetails() {
           </section>
 
           <section>
-            <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-4 tracking-widest">Repository</h2>
+            <h2 className="font-mono text-sm text-on-surface-variant uppercase mb-4 tracking-widest">{t("project_details.repository")}</h2>
             <a
               href={project.repoLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full bg-on-background-custom text-background-custom font-mono text-sm uppercase px-8 py-4 hover:bg-primary-custom transition-colors"
             >
-              View on GitHub
+              {t("project_details.view_github")}
               <ExternalLink size={18} className="ml-2" />
             </a>
           </section>
@@ -262,7 +264,7 @@ export default function ProjectDetails() {
           </div>
           <div className="mt-2 flex justify-between items-center px-2">
             <span className="font-mono text-xs text-on-surface-variant uppercase">Fig. 1</span>
-            <span className="font-mono text-xs text-on-surface-variant uppercase">System Analysis</span>
+            <span className="font-mono text-xs text-on-surface-variant uppercase">{t("project_details.fig_analysis")}</span>
           </div>
         </div>
       )}

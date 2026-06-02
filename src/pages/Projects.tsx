@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Code } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
@@ -41,18 +42,20 @@ const secondaryProjects = [
 ];
 
 export default function Projects() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col pt-32 pb-24 px-6 md:px-16 max-w-7xl mx-auto w-full">
       <section id="projects">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-4">
             <h2 className="font-display text-5xl uppercase flex items-center gap-4">
-              <span className="text-primary-container"></span> Projects
+              <span className="text-primary-container"></span> {t("projects.header_title")}
             </h2>
           </div>
           <div className="md:col-span-8 flex items-end">
             <p className="font-sans text-xl border-l-2 border-on-background-custom pl-4 max-w-2xl text-on-surface-variant">
-              Selected technical implementations focusing on network security, threat detection, and infrastructure resilience.
+              {t("projects.header_desc")}
             </p>
           </div>
         </div>
@@ -72,7 +75,7 @@ export default function Projects() {
                   </div>
                 </div>
                 <p className="font-sans text-base mb-8 flex-grow text-on-surface-variant leading-relaxed">
-                  {project.description}
+                  {t(`projects.items.${project.id}.description`, { defaultValue: project.description })}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.tags.map((tag) => (
@@ -87,7 +90,7 @@ export default function Projects() {
                 to={`/projects/${project.id}`}
                 className="mx-8 mb-8 flex items-center justify-between bg-primary-custom text-on-primary px-6 py-4 font-mono text-sm uppercase tracking-widest hover:bg-surface-tint transition-all group/btn shadow-[4px_4px_0px_#00210f] hover:shadow-none hover:translate-x-1 hover:translate-y-1"
               >
-                <span className="font-bold">Access Project Node</span>
+                <span className="font-bold">{t("projects.btn_access")}</span>
                 <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -103,7 +106,9 @@ export default function Projects() {
             >
               <div>
                 <h4 className="font-display text-xl uppercase font-bold">{project.title}</h4>
-                <span className="font-mono text-xs text-on-surface-variant uppercase">{project.category}</span>
+                <span className="font-mono text-xs text-on-surface-variant uppercase">
+                  {project.id === "cti-pipeline" ? t("projects.secondary_cti") : t("projects.secondary_web")}
+                </span>
               </div>
               <ArrowRight className="text-on-background-custom group-hover:text-primary-container transition-colors" />
             </Link>

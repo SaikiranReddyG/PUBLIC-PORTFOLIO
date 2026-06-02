@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 export default function Skills() {
+  const { t } = useTranslation();
+
   const skills = [
     {
       id: "01",
@@ -40,14 +43,26 @@ export default function Skills() {
     },
   ];
 
+  const getCategoryTitle = (id: string, defaultTitle: string) => {
+    switch (id) {
+      case "01": return t("skills.categories.net_sec");
+      case "02": return t("skills.categories.sec_tools");
+      case "03": return t("skills.categories.sys_infra");
+      case "04": return t("skills.categories.data_eng");
+      case "05": return t("skills.categories.programming");
+      case "06": return t("skills.categories.ai_automation");
+      default: return defaultTitle;
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-16 pt-32 pb-24">
       <header className="mb-24 border-b-4 border-on-background-custom pb-12">
         <h1 className="font-display text-5xl md:text-7xl uppercase text-on-background-custom mb-4 font-bold">
-          Technical Arsenal
+          {t("skills.header_title")}
         </h1>
         <p className="font-sans text-xl text-on-surface-variant max-w-2xl">
-          A structured breakdown of core competencies, tools, and environments utilized in securing, monitoring, and engineering resilient systems.
+          {t("skills.header_desc")}
         </p>
       </header>
 
@@ -68,7 +83,7 @@ export default function Skills() {
             <div className="relative z-10">
               <div className="flex items-center gap-4 border-b border-on-background-custom pb-4 mb-6 text-on-background-custom">
                 <span className="font-display text-4xl text-primary-custom font-bold">{skill.id}</span>
-                <h2 className="font-display text-2xl uppercase font-bold">{skill.title}</h2>
+                <h2 className="font-display text-2xl uppercase font-bold">{getCategoryTitle(skill.id, skill.title)}</h2>
               </div>
               <ul className="flex flex-wrap gap-4">
                 {skill.items.map((item) => (

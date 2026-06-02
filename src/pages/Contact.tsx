@@ -1,7 +1,10 @@
 import { motion } from "motion/react";
 import { Mail, Linkedin, Github, Phone, Terminal } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   const contactMethods = [
     { name: "Email", value: "saikiranreddy19565@gmail.com", icon: <Mail size={24} />, link: "mailto:saikiranreddy19565@gmail.com" },
     { name: "LinkedIn", value: "linkedin.com/in/gangula-sai-kiran-reddy", icon: <Linkedin size={24} />, link: "https://www.linkedin.com/in/gangula-sai-kiran-reddy/" },
@@ -19,14 +22,14 @@ export default function Contact() {
     <div className="max-w-7xl mx-auto px-6 md:px-16 pt-32 pb-24">
       <header className="mb-24">
         <h1 className="font-display text-5xl md:text-8xl text-on-background-custom uppercase tracking-tighter font-bold">
-          Get in Touch
+          {t("contact.header_title")}
         </h1>
         <div className="h-2 bg-on-background-custom w-full mt-6"></div>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="md:col-span-6 flex flex-col border-t-2 border-on-background-custom pt-8">
-          <h2 className="font-display text-2xl mb-8 uppercase font-bold tracking-tight">CONNECTION VECTORS</h2>
+          <h2 className="font-display text-2xl mb-8 uppercase font-bold tracking-tight">{t("contact.connection_vectors")}</h2>
           <div className="flex flex-col">
             {contactMethods.map((method) => (
               <div key={method.name} className="py-6 border-b border-on-background-custom flex flex-col gap-2 group">
@@ -47,18 +50,22 @@ export default function Contact() {
         <div className="md:col-span-5 md:col-start-8">
           <div className="border-2 border-outline-variant bg-surface-container p-8 md:p-12 relative shadow-[8px_8px_0px_#121c2c]">
             <div className="absolute -top-4 -right-4 bg-primary-custom text-on-primary font-mono text-xs px-3 py-1 uppercase border border-outline-variant font-bold">
-              Active Node
+              {t("contact.active_node")}
             </div>
             <h2 className="font-display text-3xl text-on-surface mb-8 border-b-2 border-outline-variant pb-4 uppercase font-bold">
-              Why Hire Me
+              {t("contact.why_hire_me")}
             </h2>
             <ul className="space-y-8">
-              {highlights.map((h) => (
-                <li key={h.title} className="flex items-start gap-4">
+              {highlights.map((h, i) => (
+                <li key={i} className="flex items-start gap-4">
                   <div className="w-3 h-3 bg-primary-custom mt-2 flex-shrink-0 border border-outline-variant"></div>
                   <div>
-                    <h3 className="font-mono text-sm text-on-surface uppercase mb-2 font-bold">{h.title}</h3>
-                    <p className="font-sans text-lg text-on-surface-variant leading-relaxed">{h.description}</p>
+                    <h3 className="font-mono text-sm text-on-surface uppercase mb-2 font-bold">
+                      {i === 0 ? t("contact.highlights.h1_title") : i === 1 ? t("contact.highlights.h2_title") : t("contact.highlights.h3_title")}
+                    </h3>
+                    <p className="font-sans text-lg text-on-surface-variant leading-relaxed">
+                      {i === 0 ? t("contact.highlights.h1_desc") : i === 1 ? t("contact.highlights.h2_desc") : t("contact.highlights.h3_desc")}
+                    </p>
                   </div>
                 </li>
               ))}

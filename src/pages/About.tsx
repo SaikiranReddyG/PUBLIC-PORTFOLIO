@@ -2,18 +2,21 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Brain, Trophy, Camera, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
+
   const languages = [
-    { name: "English", level: "C2", type: "system" },
-    { name: "French", level: "B1", type: "system" },
-    { name: "Telugu / Hindi", level: "Native", type: "native" },
+    { name: "English", level: "C2", type: "system", key: "lang_en" },
+    { name: "French", level: "B1", type: "system", key: "lang_fr" },
+    { name: "Telugu / Hindi", level: "Native", type: "native", key: "lang_te_hi" },
   ];
 
   const hobbies = [
-    { name: "Travel", icon: <Brain size={20} />, image: "/assets/travel.jpeg" },
-    { name: "GYM", icon: <Trophy size={20} />, image: "/assets/gym.jpeg" },
-    { name: "Photography", icon: <Camera size={20} />, image: "/assets/photography.jpeg" },
+    { name: "Travel", icon: <Brain size={20} />, image: "/assets/travel.jpeg", key: "hobby_travel" },
+    { name: "GYM", icon: <Trophy size={20} />, image: "/assets/gym.jpeg", key: "hobby_gym" },
+    { name: "Photography", icon: <Camera size={20} />, image: "/assets/photography.jpeg", key: "hobby_photo" },
   ];
 
   const [selectedHobby, setSelectedHobby] = useState<typeof hobbies[0] | null>(null);
@@ -34,15 +37,15 @@ export default function About() {
 
         <div className="md:col-span-6 md:col-start-7 flex flex-col justify-center">
           <h1 className="font-display text-5xl md:text-6xl uppercase mb-6 text-on-background-custom font-bold tracking-tighter leading-tight">
-            Operator <br /> Profile
+            {t("about.header_title")}
           </h1>
           <hr className="border-t-4 border-on-background-custom w-24 mb-8" />
           <div className="space-y-6">
             <p className="font-sans text-xl text-on-surface-variant leading-relaxed">
-              M2 Digital Security & Networks student at ISEP Paris. Driven by a rigorous pursuit of technical excellence and a deep understanding of adversarial tactics, I am seeking a final-year internship in cybersecurity.
+              {t("about.p1")}
             </p>
             <p className="font-sans text-lg text-on-surface-variant leading-relaxed opacity-80">
-              My academic foundation is built on uncompromising analytical methodologies, preparing me to architect resilient systems and dismantle complex threats. The approach is surgical; the goal is absolute structural integrity.
+              {t("about.p2")}
             </p>
           </div>
           <div className="mt-12 flex flex-wrap gap-4">
@@ -50,7 +53,7 @@ export default function About() {
               to="/projects"
               className="inline-flex items-center justify-center bg-on-background-custom text-background-custom font-mono text-sm uppercase px-8 py-4 border-2 border-on-background-custom hover:bg-primary-custom transition-colors"
             >
-              View Projects
+              {t("about.btn_projects")}
             </Link>
             <a
               href="https://drive.google.com/file/d/1yJ6pmbUEy-2pgmuI1rMKQPinJJyz9c-k/view?usp=sharing"
@@ -58,7 +61,7 @@ export default function About() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-transparent text-on-background-custom font-mono text-sm uppercase px-8 py-4 border-2 border-on-background-custom hover:bg-primary-container hover:text-background-custom hover:border-transparent transition-colors"
             >
-              Download CV
+              {t("about.btn_cv")}
             </a>
           </div>
         </div>
@@ -67,12 +70,12 @@ export default function About() {
       <section className="grid grid-cols-1 md:grid-cols-12 gap-12 pt-12 border-t-2 border-on-background-custom">
         <div className="md:col-span-5">
           <h2 className="font-display text-2xl uppercase mb-6 text-on-background-custom flex justify-between items-center font-bold">
-            Languages <span className="text-primary-custom font-mono text-sm opacity-60">SYS.LANG</span>
+            {t("about.lang_title")} <span className="text-primary-custom font-mono text-sm opacity-60">SYS.LANG</span>
           </h2>
           <ul className="border border-outline-variant bg-surface-container-low">
             {languages.map((lang) => (
               <li key={lang.name} className="flex justify-between items-center p-4 border-b border-outline-variant last:border-0 hover:bg-surface-container transition-colors">
-                <span className="font-mono text-sm uppercase font-bold text-on-surface">{lang.name}</span>
+                <span className="font-mono text-sm uppercase font-bold text-on-surface">{t(`about.${lang.key}`)}</span>
                 <span className={`font-mono text-xs px-2 py-1 border border-outline-variant ${lang.type === 'system' ? 'bg-primary-custom text-on-primary' : 'bg-surface-variant text-on-surface-variant'}`}>
                   {lang.level}
                 </span>
@@ -83,10 +86,10 @@ export default function About() {
 
         <div className="md:col-span-6 md:col-start-7">
           <h2 className="font-display text-2xl uppercase mb-6 text-on-background-custom flex justify-between items-center font-bold">
-            Off-Duty <span className="text-primary-custom font-mono text-sm opacity-60">HOBBIES</span>
+            {t("about.hobby_title")} <span className="text-primary-custom font-mono text-sm opacity-60">HOBBIES</span>
           </h2>
           <p className="font-sans text-sm text-on-surface-variant mb-4 opacity-70">
-            Click on a hobby to decrypt and unlock visual records.
+            {t("about.hobby_desc")}
           </p>
           <div className="flex flex-wrap gap-4">
             {hobbies.map((hobby) => (
@@ -99,7 +102,7 @@ export default function About() {
                 <span className="text-on-background-custom group-hover:text-primary-custom transition-colors">
                   {hobby.icon}
                 </span>
-                <span className="font-mono text-sm uppercase font-bold">{hobby.name}</span>
+                <span className="font-mono text-sm uppercase font-bold">{t(`about.${hobby.key}`)}</span>
               </button>
             ))}
           </div>
@@ -129,7 +132,7 @@ export default function About() {
                 <div className="flex items-center gap-2">
                   <span className="text-primary-custom">{selectedHobby.icon}</span>
                   <span className="font-mono text-xs uppercase tracking-widest font-bold text-on-background-custom">
-                    Visual Record: {selectedHobby.name}
+                    {t("about.visual_record")}: {t(`about.${selectedHobby.key}`)}
                   </span>
                 </div>
                 <button
@@ -145,14 +148,14 @@ export default function About() {
               <div className="aspect-[4/3] w-full bg-black overflow-hidden relative group">
                 <img
                   src={selectedHobby.image}
-                  alt={`${selectedHobby.name} record`}
+                  alt={`${t(`about.${selectedHobby.key}`)} record`}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
                 />
               </div>
 
               {/* Footer status line */}
               <div className="flex justify-between items-center px-4 py-2 bg-[#151824] border-t border-[#242938] font-mono text-[10px] uppercase text-on-background-custom/40">
-                <span>RECOVERED RECORD</span>
+                <span>{t("about.recovered_record")}</span>
                 <span>STATUS: SECURE</span>
               </div>
             </motion.div>
