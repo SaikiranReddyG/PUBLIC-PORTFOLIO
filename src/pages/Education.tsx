@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { MapPin, FileText, ExternalLink, Download, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { MapPin } from "lucide-react";
+import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
 export default function Education() {
@@ -15,10 +14,7 @@ export default function Education() {
       image: "/assets/ISEP.png",
       description: "Advanced master's degree focusing on robust architectural design, threat modeling, and cryptographic protocols. Developing deep technical expertise in securing distributed systems and modern network infrastructure against sophisticated cyber threats.",
       tags: ["Security", "Networks", "Telecommunications", "Cryptography"],
-      active: true,
-      document: "/assets/CertificatScolarite_63956_20260116130437.pdf",
-      docLabel: "Certificat de Scolarité (ISEP)",
-      docType: "pdf"
+      active: true
     },
     {
       period: "2020 — 2023",
@@ -28,14 +24,9 @@ export default function Education() {
       image: "/assets/gnit.png",
       description: "Comprehensive foundational engineering program with a strong emphasis on core electronics, embedded systems and software development lifecycles. Established the analytical groundwork required for advanced technical problem-solving.",
       tags: ["ELECTRONICS", "Telecommunication", "Hardware engineering"],
-      active: false,
-      document: "/assets/provisional_btech.jpg",
-      docLabel: "B.Tech Provisional Certificate",
-      docType: "image"
+      active: false
     },
   ];
-
-  const [activeDoc, setActiveDoc] = useState<typeof education[0] | null>(null);
 
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-16 pt-32 pb-24">
@@ -104,113 +95,11 @@ export default function Education() {
                     </span>
                   ))}
                 </div>
-
-                {item.document && (
-                  <div className="flex items-center gap-2 font-mono">
-                    <button
-                      onClick={() => setActiveDoc(item)}
-                      className="flex items-center gap-2 border-2 border-primary-custom hover:bg-primary-custom hover:text-black transition-all px-4 py-2 text-xs font-bold uppercase rounded-sm cursor-pointer select-none"
-                    >
-                      <FileText size={14} />
-                      <span>{t("education.decrypt_btn")}</span>
-                    </button>
-
-                    <a
-                      href={item.document}
-                      download
-                      className="border-2 border-on-background-custom hover:bg-on-background-custom hover:text-background-custom p-2 rounded-sm cursor-pointer"
-                      title={t("education.download_copy")}
-                    >
-                      <Download size={14} />
-                    </a>
-                  </div>
-                )}
               </div>
             </div>
           </motion.article>
         ))}
       </div>
-
-      {/* Cyber Academic Record Decryption Modal */}
-      <AnimatePresence>
-        {activeDoc && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background-custom/95 backdrop-blur-md"
-            onClick={() => setActiveDoc(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 25 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 25 }}
-              transition={{ type: "spring", duration: 0.5 }}
-              className="relative w-full max-w-4xl border-2 border-on-background-custom bg-[#0b0e14] p-2 overflow-hidden shadow-2xl rounded"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Terminal-like Header */}
-              <div className="flex justify-between items-center px-4 py-3 bg-[#111622] border-b border-[#1c2435]">
-                <div className="flex items-center gap-2">
-                  <div className="flex gap-1.5 mr-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                  </div>
-                  <span className="text-primary-custom font-mono text-xs uppercase tracking-widest font-bold">
-                    {t("education.secure_record")}: {activeDoc.docLabel}
-                  </span>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <a
-                    href={activeDoc.document}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-on-background-custom hover:text-primary-custom p-1.5 transition-all focus:outline-none cursor-pointer text-xs font-mono flex items-center gap-1"
-                    title="Open in new window"
-                  >
-                    <ExternalLink size={14} />
-                    <span className="hidden sm:inline">{t("education.fullscreen")}</span>
-                  </a>
-                  <button
-                    onClick={() => setActiveDoc(null)}
-                    className="text-on-background-custom hover:text-rose-400 p-1.5 transition-all focus:outline-none cursor-pointer"
-                    aria-label={t("education.secure_close")}
-                  >
-                    <X size={16} />
-                  </button>
-                </div>
-              </div>
-
-              {/* Secure content screen */}
-              <div className="w-full bg-black overflow-hidden relative" style={{ height: "65vh" }}>
-                {activeDoc.docType === "pdf" ? (
-                  <iframe
-                    src={`${activeDoc.document}#toolbar=0&navpanes=0`}
-                    className="w-full h-full border-0 select-none bg-white"
-                    title={activeDoc.docLabel}
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-[#07090d] p-4 overflow-auto">
-                    <img
-                      src={activeDoc.document}
-                      alt={activeDoc.docLabel}
-                      className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-700"
-                    />
-                  </div>
-                )}
-              </div>
-
-              {/* Status footer line */}
-              <div className="flex justify-between items-center px-4 py-2.5 bg-[#111622] border-t border-[#1c2435] font-mono text-[9px] uppercase text-[#9caab8]/40">
-                <span>{t("education.clearance")}</span>
-                <span className="text-emerald-400 font-bold">{t("education.status_verified")}</span>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

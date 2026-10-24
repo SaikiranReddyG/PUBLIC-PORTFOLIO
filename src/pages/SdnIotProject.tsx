@@ -45,8 +45,14 @@ export default function SdnIotProject() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#d946ef]">No human in the loop.</span>
             </h1>
             <p className="font-sans text-xl text-[#b0b8cc] max-w-3xl mb-12 leading-relaxed">
-              An end-to-end automated security pipeline for IoT networks. Suricata detects the threat, a trained ML model classifies it, and a Ryu SDN controller installs an OpenFlow drop rule — all in real time, milliseconds apart.
+              An end-to-end automated security pipeline for IoT networks. Suricata detects the threat, a trained ML model classifies it, and a Ryu SDN controller installs an OpenFlow drop rule across the switches — and removes it again on release.
             </p>
+
+            <Link to="/research" className="block border border-[#242938] bg-[#1a1f2e] hover:border-[#6366f1] transition-colors p-6 mb-12 max-w-3xl">
+              <span className="font-mono text-[10px] text-[#a5b4fc] tracking-[0.3em] uppercase block mb-2">Paper · under review</span>
+              <span className="font-sans text-lg text-[#dfe2ef] block mb-1">SDN-Assisted Intrusion Detection and Automated Mitigation in IoT Networks</span>
+              <span className="font-sans text-sm text-[#8a94ad] block">K. Vegi, S. S. Pradeep, S. R. Gangula, S. El Jaouhari · submitted to ICOIN 2027 (workshop)</span>
+            </Link>
 
             <div className="flex flex-wrap gap-2 mb-16">
               {techStrip.map((tech) => (
@@ -364,7 +370,6 @@ export default function SdnIotProject() {
           <div className="flex gap-4">
              <span>Paris, France</span>
              <a href="mailto:saikiranreddy19565@gmail.com">saikiranreddy19565@gmail.com</a>
-             <span>+33 07 51 14 76 31</span>
           </div>
           <div className="flex items-center gap-2">
              <Link to="/projects" className="flex items-center gap-2 hover:text-[#a5b4fc] transition-colors">

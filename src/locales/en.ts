@@ -1,6 +1,7 @@
 export const en = {
   nav: {
     home: "Home",
+    research: "Research",
     projects: "Projects",
     skills: "Skills",
     education: "Education",
@@ -11,21 +12,48 @@ export const en = {
   layout: {
     prev: "PREV",
     next: "NEXT",
-    load_prev: "Load Previous Page: {{name}}",
-    load_next: "Load Next Page: {{name}}"
+    load_prev: "Previous page: {{name}}",
+    load_next: "Next page: {{name}}"
   },
   home: {
     operator: "SAi.G",
-    tagline: "Cybersecurity & network security engineering student — M2 Digital Security at ISEP Paris.",
+    name_line1: "Saikiran Reddy",
+    name_line2: "Gangula",
+    tagline: "IoT and network security research. M2 Digital Security & Networks at ISEP Paris, and research intern at the University of Padua (SPRITZ group), working on eBPF/XDP security for Matter and Thread networks.",
+    research_btn: "Research",
     contact_btn: "Contact",
     cv_btn: "Download CV"
   },
+  research: {
+    header_title: "Research",
+    header_desc: "How to detect attacks on IoT networks and respond to them inside the network itself, without leaving legitimate devices offline.",
+    current_label: "Current",
+    current_title: "eBPF/XDP security gateway for Matter and Thread networks",
+    current_org: "University of Padua · SPRITZ Security & Privacy Research Group",
+    current_period: "Nov 2026 – Apr 2027",
+    current_supervisor: "Supervisor: Prof. Federico Corò",
+    current_desc: "End-of-studies research internship (M2, ISEP). The project designs and evaluates a security gateway that inspects smart-home traffic in the Linux kernel's XDP hook, where it can act on packets before they reach the rest of the system.",
+    goals_title: "Goals",
+    goal_1: "Detect reconnaissance and misuse of Matter device discovery and commissioning at the gateway.",
+    goal_2: "Enforce responses in the data plane with eBPF/XDP, scoped to the offending source.",
+    goal_3: "Evaluate on real Matter and Thread hardware rather than emulation alone.",
+    goals_note: "Results will be shared here once they are published.",
+    interests_title: "Interests",
+    interest_1: "IoT security: Matter, Thread, smart-home protocols",
+    interest_2: "Programmable data planes: eBPF/XDP, SDN, OpenFlow",
+    interest_3: "Intrusion detection and automated response",
+    interest_4: "Deception and honeypots for IoT networks",
+    pubs_title: "Publications",
+    pub_status: "Under review",
+    pub_venue: "Submitted to ICOIN 2027, Workshop on 5G & 6G Communications Networks and Big Data",
+    pub_note: "Student authors contributed equally.",
+    pub_project: "Project page",
+    profiles_title: "Profiles"
+  },
   projects: {
     header_title: "Projects",
-    header_desc: "Selected technical implementations focusing on network security, threat detection, and infrastructure resilience.",
-    btn_access: "Access Project Node",
-    secondary_cti: "Cyber Threat Intelligence",
-    secondary_web: "Penetration Testing",
+    header_desc: "Systems I have built to study network security, threat detection and automated response.",
+    btn_access: "View project",
     items: {
       pulse: {
         description: "A fully operational Security Operations Center — log ingestion pipeline, real-time threat alerting, and live dashboard — containerized from the ground up using Docker, Redis and SQLite. No off-the-shelf SIEM. Every component designed, built, and tuned manually."
@@ -34,7 +62,7 @@ export const en = {
         description: "A custom intrusion detection system built entirely in Python without relying on Scapy, libpcap, or any packet capture library. Operates at the raw socket level — dissecting Ethernet frames, IP headers, and TCP segments manually to detect port scans, SYN floods, and traffic anomalies at the protocol layer."
       },
       "sdn-iot-detection": {
-        description: "A Software-Defined Networking framework that applies machine learning to classify IoT traffic in real time. When the Random Forest model flags an anomaly, the Ryu controller responds by pushing OpenFlow rules directly onto the virtual switches — isolating compromised nodes before lateral movement occurs."
+        description: "A Software-Defined Networking framework that applies machine learning to classify IoT traffic. When the Random Forest model flags an anomaly, the Ryu controller pushes OpenFlow rules onto the virtual switches to isolate the compromised node. Paper under review at ICOIN 2027."
       },
       netlab: {
         description: "A self-contained attack-and-defense laboratory built on Linux network namespaces — lightweight, isolated, and forensically precise. Scapy handles offensive traffic generation, nftables enforces dynamic firewall rules, and Suricata monitors every packet crossing the virtual interfaces. Built to simulate real threat scenarios and validate defensive controls under controlled, repeatable conditions."
@@ -58,9 +86,10 @@ export const en = {
     back_to_portfolio: "Back to portfolio"
   },
   skills: {
-    header_title: "Technical Arsenal",
-    header_desc: "A structured breakdown of core competencies, tools, and environments utilized in securing, monitoring, and engineering resilient systems.",
+    header_title: "Skills",
+    header_desc: "Tools, protocols and environments I use for building and evaluating secure network systems.",
     categories: {
+      iot_kernel: "IoT & Kernel Networking",
       net_sec: "Network Security",
       sec_tools: "Security Tools & AppSec",
       sys_infra: "Systems & Infrastructure",
@@ -70,53 +99,43 @@ export const en = {
     }
   },
   education: {
-    header_title: "Academic Foundation",
-    decrypt_btn: "Decrypt Record",
-    download_copy: "Download Certified Copy",
-    secure_record: "[SECURE RECORD]",
-    fullscreen: "FULLSCREEN",
-    secure_close: "Secure close session",
-    clearance: "DIGITAL ARCHIVE SYSTEMS SECURITY CLEARANCE",
-    status_verified: "STATUS: RECOVERED & VERIFIED",
+    header_title: "Education",
     m2_degree: "M2 Digital Security & Networks",
-    m2_desc: "Advanced master's degree focusing on robust architectural design, threat modeling, and cryptographic protocols. Developing deep technical expertise in securing distributed systems and modern network infrastructure against sophisticated cyber threats.",
-    btech_degree: "B.Tech Electronics and communication Engineering",
-    btech_desc: "Comprehensive foundational engineering program with a strong emphasis on core electronics, embedded systems and software development lifecycles. Established the analytical groundwork required for advanced technical problem-solving."
+    m2_desc: "Master's-level engineering degree in network security, cryptography, threat modelling and secure distributed systems. Final project: SDN-assisted intrusion detection for IoT networks (paper under review). Final semester: research internship at the University of Padua.",
+    btech_degree: "B.Tech Electronics and Communication Engineering",
+    btech_desc: "Engineering degree in electronics, embedded systems and communication. The hardware background behind my interest in securing constrained IoT devices."
   },
   about: {
-    header_title: "Operator Profile",
-    p1: "M2 Digital Security & Networks student at ISEP Paris. Driven by a rigorous pursuit of technical excellence and a deep understanding of adversarial tactics, I am seeking a final-year internship in cybersecurity.",
-    p2: "My academic foundation is built on uncompromising analytical methodologies, preparing me to architect resilient systems and dismantle complex threats. The approach is surgical; the goal is absolute structural integrity.",
+    header_title: "About",
+    p1: "I am an M2 Digital Security & Networks student at ISEP Paris. From November 2026 to April 2027 I am a research intern in the SPRITZ Security & Privacy Research Group at the University of Padua, working on eBPF/XDP-based security for Matter and Thread networks.",
+    p2: "My background is in electronics and communication engineering, which is why I keep coming back to the point where constrained devices meet the network. I like building systems end to end and measuring how they behave. After the internship I plan to continue with a PhD in IoT and network security.",
     btn_projects: "View Projects",
     btn_cv: "Download CV",
     lang_title: "Languages",
     lang_en: "English",
     lang_fr: "French",
     lang_te_hi: "Telugu / Hindi",
-    hobby_title: "Off-Duty",
-    hobby_desc: "Click on a hobby to decrypt and unlock visual records.",
+    hobby_title: "Outside Work",
+    hobby_desc: "Click on a hobby to see photos.",
     hobby_travel: "Travel",
     hobby_gym: "GYM",
     hobby_photo: "Photography",
-    view_records: "View records for {{name}}",
-    visual_record: "Visual Record",
-    close_record: "Close record",
-    recovered_record: "RECOVERED RECORD",
-    status_secure: "STATUS: SECURE"
+    view_records: "View photos for {{name}}",
+    visual_record: "Photos",
+    close_record: "Close"
   },
   contact: {
-    header_title: "Get in Touch",
-    connection_vectors: "CONNECTION VECTORS",
-    why_hire_me: "Why Hire Me",
-    active_node: "Active Node",
-    protocol_init: "Initiate connection protocol",
+    header_title: "Contact",
+    connection_vectors: "Links",
+    focus_title: "Research Focus",
+    focus_badge: "Open to collaboration",
     highlights: {
-      h1_title: "Hardware-Rooted Security",
-      h1_desc: "Applies low-level precision from an electronics background to digital security.",
-      h2_title: "Resource-Constrained Engineering",
-      h2_desc: "Brings hardware-level efficiency to software architecture.",
-      h3_title: "End-to-End Systems Thinking",
-      h3_desc: "Designs individual tools to work as a unified ecosystem. Connects a network IDS, system monitor, and attack lab into a modular SOC platform operating over a single event contract."
+      h1_title: "From Hardware to Network",
+      h1_desc: "An electronics background applied to securing constrained IoT devices and the networks they depend on.",
+      h2_title: "Detection That Acts",
+      h2_desc: "Closing the loop from detection to enforcement: SDN controllers, eBPF/XDP and in-kernel response.",
+      h3_title: "Built and Measured",
+      h3_desc: "Systems built end to end and evaluated on real traffic and hardware, not only in simulation."
     }
   }
 };

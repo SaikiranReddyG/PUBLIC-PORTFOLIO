@@ -11,6 +11,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t("nav.home"), path: "/" },
+    { name: t("nav.research"), path: "/research" },
     { name: t("nav.projects"), path: "/projects" },
     { name: t("nav.skills"), path: "/skills" },
     { name: t("nav.education"), path: "/education" },

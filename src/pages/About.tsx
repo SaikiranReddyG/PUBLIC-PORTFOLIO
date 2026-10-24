@@ -28,7 +28,7 @@ export default function About() {
           <div className="w-full aspect-[3/4] border-2 border-on-background-custom bg-surface-container-high overflow-hidden group">
             <img
               src="/assets/profilepicHOMEcolour.jpeg"
-              alt="SAi.G Portrait"
+              alt="Saikiran Reddy Gangula"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-110"
             />
           </div>
@@ -97,7 +97,7 @@ export default function About() {
                 key={hobby.name}
                 onClick={() => setSelectedHobby(hobby)}
                 className="flex items-center gap-3 border-2 border-on-background-custom px-6 py-3 hover:bg-on-background-custom hover:text-background-custom transition-all group cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-custom text-left"
-                aria-label={`View records for ${hobby.name}`}
+                aria-label={t("about.view_records", { name: t(`about.${hobby.key}`) })}
               >
                 <span className="text-on-background-custom group-hover:text-primary-custom transition-colors">
                   {hobby.icon}
@@ -138,7 +138,7 @@ export default function About() {
                 <button
                   onClick={() => setSelectedHobby(null)}
                   className="text-on-background-custom hover:text-primary-custom hover:bg-[#242938] p-1.5 transition-all focus:outline-none cursor-pointer"
-                  aria-label="Close record"
+                  aria-label={t("about.close_record")}
                 >
                   <X size={16} />
                 </button>
@@ -148,15 +148,9 @@ export default function About() {
               <div className="aspect-[4/3] w-full bg-black overflow-hidden relative group">
                 <img
                   src={selectedHobby.image}
-                  alt={`${t(`about.${selectedHobby.key}`)} record`}
+                  alt={t(`about.${selectedHobby.key}`)}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
                 />
-              </div>
-
-              {/* Footer status line */}
-              <div className="flex justify-between items-center px-4 py-2 bg-[#151824] border-t border-[#242938] font-mono text-[10px] uppercase text-on-background-custom/40">
-                <span>{t("about.recovered_record")}</span>
-                <span>STATUS: SECURE</span>
               </div>
             </motion.div>
           </motion.div>

@@ -24,6 +24,14 @@ export default function Footer() {
           >
             LinkedIn
           </a>
+          <a
+            href="https://orcid.org/0009-0003-6827-5617"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-sm uppercase text-background-custom hover:text-primary-custom transition-all"
+          >
+            ORCID
+          </a>
         </div>
         <div className="font-mono text-sm uppercase text-background-custom opacity-50 text-center md:text-right">
         </div>

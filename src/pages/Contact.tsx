@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, Linkedin, Github, Phone, Terminal } from "lucide-react";
+import { Mail, Linkedin, Github, IdCard } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {
@@ -9,13 +9,7 @@ export default function Contact() {
     { name: "Email", value: "saikiranreddy19565@gmail.com", icon: <Mail size={24} />, link: "mailto:saikiranreddy19565@gmail.com" },
     { name: "LinkedIn", value: "linkedin.com/in/gangula-sai-kiran-reddy", icon: <Linkedin size={24} />, link: "https://www.linkedin.com/in/gangula-sai-kiran-reddy/" },
     { name: "GitHub", value: "github.com/SaikiranReddyG", icon: <Github size={24} />, link: "https://github.com/SaikiranReddyG" },
-    { name: "Phone/whatsapp", value: "+33 751147631", icon: <Phone size={24} />, link: "tel:+33751147631" },
-  ];
-
-  const highlights = [
-    { title: "Hardware-Rooted Security", description: "Applies low-level precision from an electronics background to digital security." },
-    { title: "Resource-Constrained Engineering", description: "Brings hardware-level efficiency to software architecture." },
-    { title: "End-to-End Systems Thinking", description: "Designs individual tools to work as a unified ecosystem. Connects a network IDS, system monitor, and attack lab into a modular SOC platform operating over a single event contract." },
+    { name: "ORCID", value: "0009-0003-6827-5617", icon: <IdCard size={24} />, link: "https://orcid.org/0009-0003-6827-5617" },
   ];
 
   return (
@@ -38,7 +32,7 @@ export default function Contact() {
                   href={method.link}
                   target={method.link.startsWith('http') ? "_blank" : undefined}
                   rel={method.link.startsWith('http') ? "noopener noreferrer" : undefined}
-                  className="font-display text-2xl text-primary-custom group-hover:bg-primary-custom group-hover:text-background-custom transition-all duration-200 w-fit px-2"
+                  className="font-display text-2xl text-primary-custom group-hover:bg-primary-custom group-hover:text-background-custom transition-all duration-200 w-fit max-w-full break-all px-2"
                 >
                   {method.value}
                 </a>
@@ -50,21 +44,21 @@ export default function Contact() {
         <div className="md:col-span-5 md:col-start-8">
           <div className="border-2 border-outline-variant bg-surface-container p-8 md:p-12 relative shadow-[8px_8px_0px_#121c2c]">
             <div className="absolute -top-4 -right-4 bg-primary-custom text-on-primary font-mono text-xs px-3 py-1 uppercase border border-outline-variant font-bold">
-              {t("contact.active_node")}
+              {t("contact.focus_badge")}
             </div>
             <h2 className="font-display text-3xl text-on-surface mb-8 border-b-2 border-outline-variant pb-4 uppercase font-bold">
-              {t("contact.why_hire_me")}
+              {t("contact.focus_title")}
             </h2>
             <ul className="space-y-8">
-              {highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-4">
+              {["h1", "h2", "h3"].map((h) => (
+                <li key={h} className="flex items-start gap-4">
                   <div className="w-3 h-3 bg-primary-custom mt-2 flex-shrink-0 border border-outline-variant"></div>
                   <div>
                     <h3 className="font-mono text-sm text-on-surface uppercase mb-2 font-bold">
-                      {i === 0 ? t("contact.highlights.h1_title") : i === 1 ? t("contact.highlights.h2_title") : t("contact.highlights.h3_title")}
+                      {t(`contact.highlights.${h}_title`)}
                     </h3>
                     <p className="font-sans text-lg text-on-surface-variant leading-relaxed">
-                      {i === 0 ? t("contact.highlights.h1_desc") : i === 1 ? t("contact.highlights.h2_desc") : t("contact.highlights.h3_desc")}
+                      {t(`contact.highlights.${h}_desc`)}
                     </p>
                   </div>
                 </li>
@@ -74,14 +68,13 @@ export default function Contact() {
 
           <div className="mt-12 border border-on-background-custom bg-[#121212] p-8 hidden md:block text-primary-custom font-mono text-sm leading-relaxed">
             <pre className="whitespace-pre-wrap">
-              <code>{`// Initiate connection protocol
-const candidate = new Engineer({
-  name: "SAi.G",
-  focus: ["Security", "Architecture"],
-  status: "Available"
-});
-
-candidate.connect();`}</code>
+              <code>{`// research profile
+const researcher = {
+  name: "Saikiran Reddy Gangula",
+  focus: ["IoT security", "eBPF/XDP", "SDN"],
+  now: "University of Padua · SPRITZ",
+  orcid: "0009-0003-6827-5617"
+};`}</code>
             </pre>
           </div>
         </div>

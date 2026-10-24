@@ -36,11 +36,6 @@ const projects = [
   },
 ];
 
-const secondaryProjects = [
-  { id: "cti-pipeline", title: "CTI Pipeline", category: "Cyber Threat Intelligence" },
-  { id: "web-attack-framework", title: "Web Attack Framework", category: "Penetration Testing" },
-];
-
 export default function Projects() {
   const { t } = useTranslation();
 
@@ -94,24 +89,6 @@ export default function Projects() {
                 <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-          {secondaryProjects.map((project) => (
-            <Link
-              key={project.id}
-              to={`/projects/${project.id}`}
-              className="border-t border-b border-on-background-custom py-6 flex justify-between items-center group hover:bg-surface-container transition-colors px-4"
-            >
-              <div>
-                <h4 className="font-display text-xl uppercase font-bold">{project.title}</h4>
-                <span className="font-mono text-xs text-on-surface-variant uppercase">
-                  {project.id === "cti-pipeline" ? t("projects.secondary_cti") : t("projects.secondary_web")}
-                </span>
-              </div>
-              <ArrowRight className="text-on-background-custom group-hover:text-primary-container transition-colors" />
-            </Link>
           ))}
         </div>
       </section>

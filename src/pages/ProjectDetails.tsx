@@ -84,39 +84,6 @@ if prediction == 'ATTACK':
     image: "/assets/netlab.png",
     repoLink: "https://github.com/SaikiranReddyG/netlab.git",
   },
-  "cti-pipeline": {
-    title: "CTI Pipeline",
-    overview: "Cyber threat intelligence pipeline with automated ingestion, processing, and visualization from OTX and NVD sources.",
-    architecture: [
-      { id: "01", title: "Data Ingestion", description: "Automated fetch mechanisms orchestrate API calls to OTX and NVD using Airflow DAGs." },
-      { id: "02", title: "Processing Pipeline", description: "Apache Spark clusters handle ETL tasks, normalizing complex JSON structures." },
-      { id: "03", title: "Visualization / ELK", description: "Processed data is indexed into Elasticsearch with Kibana dashboards for SecOps." },
-    ],
-    stack: ["Airflow", "Spark", "ELK", "OTX", "NVD"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
-    repoLink: "https://github.com/SaikiranReddyG",
-  },
-  "web-attack-framework": {
-    title: "Web Attack Framework",
-    overview: "Web application security testing framework covering OWASP top vulnerabilities. Designed for high-throughput, asynchronous vulnerability scanning.",
-    architecture: [
-      { id: "01", title: "Asynchronous Task Processing", description: "Leverages Celery and Redis to handle concurrent scanning tasks." },
-      { id: "02", title: "Security Testing Modules", description: "Pluggable architecture for implementing specific OWASP Top 10 vulnerability checks." },
-      { id: "03", title: "Real-time Dashboard", description: "React-based frontend providing live updates on scan progress via WebSockets." },
-    ],
-    stack: ["FastAPI", "Celery", "React", "OWASP"],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
-    repoLink: "https://github.com/Anurag080102/attack-sim.git",
-    codeSnippet: `@celery_app.task(bind=True, max_retries=3)
-def execute_scan_module(self, target_url: str, module_type: str):
-    try:
-        scanner = ModuleFactory.get_scanner(module_type)
-        results = scanner.run(target_url)
-        db.save_results(self.request.id, results)
-        return results
-    except Exception as e:
-        self.retry(exc=e, countdown=60)`,
-  },
 };
 
 export default function ProjectDetails() {
@@ -253,7 +220,7 @@ export default function ProjectDetails() {
         </div>
       </div>
 
-      {id !== "cti-pipeline" && id !== "web-attack-framework" && (
+      {(
         <div className="mt-24 border-2 border-on-background-custom p-2 bg-surface-container-highest">
           <div className="w-full aspect-video bg-surface overflow-hidden relative group border border-on-background-custom">
             <img

@@ -407,10 +407,9 @@ ip link set veth-atk-br master br-lab && ip link set veth-atk-br up`}
           <div className="flex gap-4">
              <span>Paris, France</span>
              <a href="mailto:saikiranreddy19565@gmail.com">saikiranreddy19565@gmail.com</a>
-             <span>+33 07 51 14 76 31</span>
           </div>
           <div className="flex items-center gap-2">
-             <span className="text-[10px] opacity-40 uppercase tracking-widest">Final year · seeking end-of-study internship</span>
+             <span className="text-[10px] opacity-40 uppercase tracking-widest">Research intern · University of Padua (SPRITZ) · Nov 2026 – Apr 2027</span>
           </div>
         </div>
       </footer>

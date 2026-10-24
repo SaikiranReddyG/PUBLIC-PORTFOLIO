@@ -600,7 +600,7 @@ export default function PortwatchProject() {
             <div className="md:col-span-4">
               <h3 className="font-display text-lg font-bold text-[#dae2eb] mb-2 uppercase">Saikiran Gangula</h3>
               <p className="font-sans text-xs leading-relaxed opacity-75 mb-1">ISEP Paris — Digital Security & Networks</p>
-              <p className="font-sans text-xs opacity-65">Final year · seeking end-of-study internship</p>
+              <p className="font-sans text-xs opacity-65">Research intern · University of Padua (SPRITZ) · Nov 2026 – Apr 2027</p>
             </div>
 
             <div className="md:col-span-4 text-center md:text-left">
@@ -622,7 +622,7 @@ export default function PortwatchProject() {
           </div>
 
           <div className="border-t border-[#1c2430]/60 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px]">
-            <span>saikiranreddy19565@gmail.com · +33 07 51 14 76 31 · Paris, France</span>
+            <span>saikiranreddy19565@gmail.com · Paris, France</span>
             <Link to="/projects" className="flex items-center gap-2 hover:text-[#dae2eb] transition-all text-xs font-bold uppercase text-emerald-400 tracking-wider">
               <ArrowLeft size={12} /> Back to portfolio
             </Link>

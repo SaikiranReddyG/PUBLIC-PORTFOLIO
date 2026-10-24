@@ -8,15 +8,17 @@ import { useTranslation } from "react-i18next";
 
 const routeIndexMap: Record<string, number> = {
   "/": 0,
-  "/projects": 1,
-  "/skills": 2,
-  "/education": 3,
-  "/about": 4,
-  "/contact": 5,
+  "/research": 1,
+  "/projects": 2,
+  "/skills": 3,
+  "/education": 4,
+  "/about": 5,
+  "/contact": 6,
 };
 
 const mainPages = [
   { path: "/", id: "home", label: "HOME", tag: "SYS_CORE_INIT" },
+  { path: "/research", id: "research", label: "RESEARCH", tag: "RESEARCH" },
   { path: "/projects", id: "projects", label: "PROJECTS", tag: "PROJ_REPO" },
   { path: "/skills", id: "skills", label: "SKILLS", tag: "SKILL_MATRIX" },
   { path: "/education", id: "education", label: "EDUCATION", tag: "EDU_LOGS" },
@@ -25,7 +27,7 @@ const mainPages = [
 ];
 
 const getRouteIndex = (path: string) => {
-  if (path.startsWith("/projects/")) return 1.5;
+  if (path.startsWith("/projects/")) return 2.5;
   return routeIndexMap[path] ?? 0;
 };
 
@@ -99,7 +101,7 @@ export default function Layout() {
   // Next page computer
   let nextPage = mainPages[0];
   if (isSubProject) {
-    nextPage = mainPages[2]; // Skills is index 2
+    nextPage = mainPages[3]; // Skills is index 3
   } else if (currentPageIdx < mainPages.length - 1) {
     nextPage = mainPages[currentPageIdx + 1];
   } else {
